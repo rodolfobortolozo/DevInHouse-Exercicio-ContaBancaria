@@ -1,24 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
     <script src="js/app.js" defer type="module"></script>
-    <title>Conta bancária</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>B1- Banking</title>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
+
 <body>
-    <h1>Conta Bancária</h1>
-    <nav>
-        <ul>
-            <li>Cadastro de Cliente</li>
-            <li>Depósito</li>
-            <li>Saque</li>
-            <li>Consulta de Saldo</li>
-        </ul>
-    </nav>
+    <div class="main">
+        <div class="body-content">
+            <h1>Conta Bancária</h1>
+            <!--
+            <nav>
+                <ul>
+                    <li>Cadastro de Cliente</li>
+                    <li>Depósito</li>
+                    <li>Saque</li>
+                    <li>Consulta de Saldo</li>
+                </ul>
+            </nav>
+            -->
+            <!-- Cadastro de Cliente-->
+            <div class="blocos">
+                <fieldset>
+                    <legend>
+                        <h4>Cadastro de Cliente</h4>
+                    </legend>
+
+                    <label for="name" class="label">Nome</label>
+                    <input type="text" id="name"> <br>
+                    <label for="cpf" class="label">Cpf</label>
+                    <input type="text" id="cpf"> <br>
+                    <label for="phone" class="label">Telefone</label>
+                    <input type="text" id="phone"> <br>
+                    <label for="password" class="label">Senha</label>
+                    <input type="text" id="password"> <br>
+                    <label for="confirmpasssord" class="label">Confirme a senha</label>
+                    <input type="text" id="confirmepassword"><br>
+                    <button id="btnSubmit">Cadastrar</button>
+                    <button id="btnClear">Limpar</button>
+                    <button id="btnFindAll">Listar Todos</button>
+                    <p id="returnoadd" class="mensagem"></p>
+                </fieldset>
+            </div>
+            <!-- Operação-->
+            <div class="blocos">
+                <fieldset>
+                    <legend>
+                        <h4>Operação</h4>
+                    </legend>
+                    <fieldset>
+                        <legend>Selecione a Operação Desejada:</legend>
+
+                        <div>
+                            <input type="radio" id="credit" name="operation" value="C" checked>
+                            <label for="credit">Depósito</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="debit" name="operation" value="D">
+                            <label for="debit">Saque</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="debit" name="operation" value="S">
+                            <label for="debit">Saldo</label>
+                        </div>
+
+
+                    </fieldset>
+                    <label for="account" class="label">Conta</label>
+                    <input type="text" id="account"> <br>
+                    <label for="value" class="label">Valor</label>
+                    <input type="text" id="value"> <br>
+                    <label for="passworddeposit" class="label">Senha</label>
+                    <input type="text" id="passworddeposit"> <br>
+                    <button id="btnDeposit">Realizar Operação</button> <br>
+                    <p id="returnoperation" class="mensagem"></p>
+                </fieldset>
+            </div>
+            <div class="blocos">
+                <fieldset>
+                    <legend> <h4>Contas Cadastradas</h4></legend>
+                    <p id="returnoaccounts" class="mensagem"></p>
+                    <ul id="allaccounts">
+
+                    </ul>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
 
     <footer> B1 - Banking</footer>
 </body>
+
 </html>
